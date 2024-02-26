@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 const ShoppingList = ({ items, handleClick, handleAddItem}) => {
-    const [values, setValue] = useState("")
+    const [values, setValues] = useState("")
 
 
   return (  
@@ -13,12 +13,12 @@ const ShoppingList = ({ items, handleClick, handleAddItem}) => {
         <form onSubmit={(e) => {e.preventDefault()
 
         handleAddItem(values);
-        setValue("");
+        setValues("");
         }}>
      <input 
        placeholder="Yeni bir madde ekleyin"
        value={values}
-       onChange={(event) => setValue(event.target.value)
+       onChange={(event) => setValues(event.target.value)
        } />
       <button>Add</button>
      
