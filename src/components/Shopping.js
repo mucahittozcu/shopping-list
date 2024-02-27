@@ -11,10 +11,13 @@ const ShoppingList = ({ items, handleClick, handleAddItem}) => {
        <div className="title"> <h2>Alınacaklar</h2></div>
         <div className="container"> 
         <form onSubmit={(e) => {e.preventDefault()
+        if(values.trim().length > 0) {
 
-        handleAddItem(values);
-        setValues("");
-        }}>
+          
+          handleAddItem(values);
+          setValues("");
+        }
+      }}>
      <input 
        placeholder="Yeni bir madde ekleyin"
        value={values}
